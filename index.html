@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynki</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+<body>
+    <h1>
+        Czy zostaniesz moją walentynką?<br>
+        <b><button id="guzik1" onclick="tak()"><b>Tak</b></button>
+        <button id="guzik2" onclick="nie()"><b>Nie</b></button>
+        </b>
+    </h1>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+
+            heart.innerText = '💗';
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        function tak() {
+            alert('Ale super 💗 ')
+        }
+
+        function nie() {
+            alert("Spodziewalas sie ze cos sie stanie? Nie miło bardzo 🥺")
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+
+
+</html>
